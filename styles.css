@@ -63,16 +63,23 @@ h6 {
 }
 
 body {
-  font-size: 16px;
-  background-image: url("./images/pattern-background-mobile.svg");
-  background-size: cover;
-  font-family: var(--Red-Hat-Display);
-
   display: grid;
-  place-content: center;
+  place-items: center;
+
+  background-image: url("./images/pattern-background-mobile.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: 11rem;
+  background-color: #e1e9ff;
+
+  font-size: 16px;
+  font-family: var(--Red-Hat-Display);
 }
 
 .container {
+  display: grid;
+  grid-auto-rows: 22rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,7 +132,7 @@ body {
 .flex-content > a {
   font-weight: 700;
   font-size: 0.8rem;
-  color: var(--Bright-blue);
+  color: var(--Pale-blue);
 }
 
 .pay {
@@ -170,33 +177,28 @@ body {
   color: black;
 }
 
-@media (min-width: 417px) {
+/* Desktop */
+@media (min-width: 500px) {
   body {
     background-image: url("./images/pattern-background-desktop.svg");
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-color: #dfe6fb;
+    background-position-y: -5rem;
 
     display: grid;
-    margin: 4rem;
-  }
-
-  .order-sumary {
-    font-size: 1.8rem;
-    margin-top: 2rem;
+    place-content: center;
   }
 
   .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 28rem;
+    width: max-content;
     height: 43rem;
-    margin: 1.5rem;
-    border-radius: 1.2rem;
-    overflow: hidden;
-    background: #fff;
+  }
+
+  .order-sumary {
+    font-size: 1.7rem;
+  }
+
+  .order-sumary {
+    margin-top: 2.6rem;
   }
 
   .description {
@@ -204,25 +206,46 @@ body {
   }
 
   .flex-content {
-    width: 21rem;
-    height: 6.3rem;
+    width: 22rem;
+    margin-bottom: 1.9rem;
+    height: 6rem;
   }
 
   .flex-content > img {
-    margin-left: 1.1rem;
+    margin-left: 0.7rem;
   }
 
-  .flex-content .anual-plan > p {
+  .anual-plan {
+    margin-right: 4rem;
+  }
+
+  .anual-plan p:nth-child(2) {
     font-size: 1rem;
-    margin-right: 3rem;
   }
 
   .flex-content > a {
+    font-size: 0.9rem;
+    color: #786ecd;
+    margin-right: 0.6rem;
+  }
+
+  .anual-plan p:first-child {
+    font-weight: 900;
     font-size: 1rem;
-    margin-right: 1rem;
   }
 
   .pay a:first-child {
-    width: 21rem;
+    width: 22rem;
+  }
+
+  .pay,
+  .payment,
+  .cancel-order {
+    font-size: 0.9rem;
+    font-weight: 800;
+  }
+  .cancel-order {
+    margin-top: 2rem;
+    font-size: 0.9rem;
   }
 }
